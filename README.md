@@ -19,13 +19,14 @@ Reddit sometimes contains some offensive images be careful with your search term
 
 * Some sort of title
 * A short description telling the user what to do
-* A form with a blank text `<input>`
+* A `<form>` with an `<input>` of type "text"
 * A `<input>` button of type "submit". ("start" or "go" or "search")
 
 #### When the user enters a search term and presses enter
 
+* Prevent the default behavior of refreshing the page on form submission
 * Fetch related posts from reddit (with `fetch`) (Hint! Save these these posts into an array!)
-* Display one <img> in the DOM at a time.
+* Display one `<img>` in the DOM at a time.
 * Display each of the images on an interval as a slideshow  (with DOM manipulation)
 * Show a button to stop / reset the animation
 * Repeatedly cycle through the images until user clicks "stop"

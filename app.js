@@ -3,7 +3,7 @@ const formEl = document.getElementById('reddit-form')
 const searchEl = document.getElementById('search-term')
 const redditEl = document.querySelector('#reddit')
 
-// pics array
+
 
 // Function
 function handleSubmit(event) {
@@ -12,20 +12,37 @@ function handleSubmit(event) {
     const url = 'http://www.reddit.com/search.json?q='
     fetch(url + searchEl.value + '+nsfw:no')
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             return response.json();
         })
         .then((data) => {
+            //Dom elements
+            let divEl = document.createElement('div')
+            
+            
             //variables
             let reddit = data.data.children
-            // console.log(pics.title);
-            console.log(reddit[0]);
+            // let pics = reddit[i].data.thumbnail
+            // let title = reddit[1].data.title
             
-            let title = reddit[0].data.title
-            console.log(title);
+            //array
+            let slideShow = []
+            //Loop into array
+            for (let i = 0; i < reddit.length; i++) {
+                slideShow.push(reddit[i].data.thumbnail)
+            }
+           
+            //add array images to DOM
+            for (let i = 0; i < slideShow.length; i++) {
+                let picEl = document.createElement('img')
+                picEl.setAttribute('src', slideShow[i])
+                //Add to DOM
+                redditEl.textContent = ''
+                divEl.append(picEl)
+                redditEl.append(divEl)
 
-            let pics = reddit[0].data.thumbnail
-            console.log(pics);
+            }
+            console.log(slideShow);
 
 
         })

@@ -26,32 +26,34 @@ Reddit sometimes contains some offensive images be careful with your search term
 
 * Prevent the default behavior of refreshing the page on form submission
 * Fetch related posts from reddit (with `fetch`) (Hint! Save these these posts into an array!)
-* Display one `<img>` in the DOM at a time.
+* Display information on those posts in the DOM.
+
+### **Bonus!** - Implement a Slideshow
+
 * Display each of the images on an interval as a slideshow  (with DOM manipulation)
 * Show a button to stop / reset the animation
 * Repeatedly cycle through the images until user clicks "stop"
 
-#### When the user clicks the "stop" button
+When the user clicks the "stop" button
 
 * Animation stops / images are removed
 * Form / title / description are shown again
 * User can enter a new search term
 
 
-## Suggested proccess
+## Suggested process
 
 It is important to break down any development project in to smaller pieces and tackle them one at a time. Here is a list of how you might want to attack this project.
 
 * Create your form (HTML/CSS)
 * Prevent default form submission and verify that you can type something into the form
 * Use AJAX to make a request. Show data in console
-* Create an array of image URLs (tip: use [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)).
-* Make the form / title / description hide
-* Cycle through images
+* Create an array of image URLs (tip: [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) can be easier than using a regular for loop to parse just the data that you need).
+* Bonus - Cycle through images
     * tip: use [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)
     * Either add images, or change the `src` of a single image tag
 * Add some interesting style / animation
-* Create button to stop animation (tip: use [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval)).
+* Bonus - Create button to stop animation (tip: use [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval)).
 
 ## Example Deliverables
 
@@ -62,11 +64,11 @@ It is important to break down any development project in to smaller pieces and t
 ![Slide 2](./examples/ajaxexample2.jpg)
 
 
-## Bonuses
+## Additional Bonuses
 
 * Make a smooth transition to next slide (e.g., a fade out)
 * The form / title / description should hide after searching
-
+* Skip any search results that give a back a picture that don't end in `.jpg` or `.png`! Hint - Use `.substring() or .slice()`
 ---
 
 ## Licensing
